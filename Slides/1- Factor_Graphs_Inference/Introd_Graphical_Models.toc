@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Course overview}{2}{0}{1}
+\beamer@sectionintoc {2}{Representing probability distributions via Factor graphs}{17}{0}{2}
+\beamer@subsectionintoc {2}{1}{Directed graphical models}{19}{0}{2}
+\beamer@subsectionintoc {2}{2}{Undirected graphical models}{21}{0}{2}
+\beamer@subsectionintoc {2}{3}{Factor graphs}{27}{0}{2}
+\beamer@sectionintoc {3}{Factor graphs in digital communications scenarios}{31}{0}{3}
+\beamer@subsectionintoc {3}{1}{Transmission of linear block codes over a memoryless channel}{32}{0}{3}
+\beamer@subsectionintoc {3}{2}{Symbol transmission and detection over ISI channels}{36}{0}{3}

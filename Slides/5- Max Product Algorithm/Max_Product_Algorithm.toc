@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Motivation}{4}{0}{1}
+\beamer@sectionintoc {2}{The Max-Product message passing algorithm}{9}{0}{2}
+\beamer@sectionintoc {3}{The Viterbi Algorithm}{14}{0}{3}

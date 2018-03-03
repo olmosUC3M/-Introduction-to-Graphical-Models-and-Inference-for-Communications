@@ -1,0 +1,588 @@
+
+%\usepackage[shadow]{todonotes}
+%\newcommand{\nota}[1]{\todo[color=green!40, noline]{#1}}
+%\setlength{\marginparwidth}{-2cm}
+
+%:Utilizar Times para las fórmulas
+\usepackage{mathptmx}
+
+%:Para utilizar una fuente caligráfica rebuscada, con el comando \mathscr{}
+\usepackage{mathrsfs}
+
+%:Para que el comando \mathcal genere las fuentes habituales
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+%%NOTACION PROPIA
+
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{IEEEtrantools}
+\usepackage{multirow}
+%\usepackage{kbordermatrix}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xcolor,colortbl}
+
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+
+
+
+\newcommand{\LABEQ}[1]{\label{eq:#1}}%\mathtt{[eq:#1]}\qquad
+\newcommand{\LABALG}[1]{\label{alg:#1}}%\mathtt{[lab:#1]}\qquad
+\newcommand{\LABTAB}[1]{\label{tab:#1}}%{\tt [tab:$\text{$#1$}$]}}
+\newcommand{\LABFIG}[1]{\label{fig:#1}}%{\tt [fig:$\text{$#1$}$]}}
+\newcommand{\LABTHM}[1]{\label{thm:#1}}%{\tt [thm:#1]}}
+\newcommand{\LABPRP}[1]{\label{prp:#1}}%{\tt [prp:#1]}}
+\newcommand{\LABLEM}[1]{\label{lem:#1}}%{\tt [lem:#1]}}
+\newcommand{\LABCOR}[1]{\label{cor:#1}}%{\tt [cor:#1]}}
+\newcommand{\LABDFN}[1]{\label{dfn:#1}}%{\tt [dfn:#1]}}
+\newcommand{\LABFNT}[1]{\label{fnt:#1}}%{\tt [fnt:#1]}}
+\newcommand{\EQ}[1]{\eqref{eq:#1}}%$^{\text{\tt [#1]}}$} %used to be  %{(\ref{eq:#1})}
+\newcommand{\ALG}[1]{~\ref{alg:#1}}
+\newcommand{\TAB}[1]{~\ref{tab:#1}}%$^{\text{\tt [#1]}}$}
+\newcommand{\FIG}[1]{\ref{fig:#1}} %$^{\text{\tt [#1]}}$}
+\newcommand{\THM}[1]{~\ref{thm:#1}}%$^{\text{\tt [#1]}}$}
+\newcommand{\COR}[1]{~\ref{cor:#1}}%$^{\text{\tt [#1]}}$}
+\newcommand{\PRP}[1]{~\ref{prp:#1}}%$^{\text{\tt [#1]}}$}
+\newcommand{\LEM}[1]{~\ref{lem:#1}}%$^{\text{\tt [#1]}}$}
+\newcommand{\DFN}[1]{~\ref{dfn:#1}}%$^{\text{\tt [#1]}}$}
+\newcommand{\FNT}[1]{~\ref{fnt:#1}}%$^{\text{\tt [#1]}}$}
+\newcommand{\PAGEEQ}[1]{~\pageref{eq:#1}}
+\newcommand{\PAGETAB}[1]{~\pageref{tab:#1}}
+\newcommand{\PAGEFIG}[1]{~\pageref{fig:#1}}
+\newcommand{\LABCHAP}[1]{\label{chap:#1}}%{\tt [chap:#1]}}
+\newcommand{\LABSEC}[1]{\label{sec:#1}}%{\tt [sec:#1]}}
+\newcommand{\LABSSEC}[1]{\label{ssec:#1}}%{\tt [ssec:#1]}}
+\newcommand{\LABSSSEC}[1]{\label{sssec:#1}}%{\tt [sssec:#1]}}
+\newcommand{\CHAP}[1]{~\ref{chap:#1}}%$^{\text{\tt [c:#1]}}$}
+\newcommand{\SEC}[1]{~\ref{sec:#1}}%$^{\text{\tt [s:#1]}}$}
+\newcommand{\SSEC}[1]{~\ref{ssec:#1}}%$^{\text{\tt [ss:#1]}}$}
+\newcommand{\SSSEC}[1]{~\ref{sssec:#1}}%$^{\text{\tt [sss:#1]}}$}
+
+%Probabilities and graphical models
+\def\P{{\pdf}}		%Probability
+\def\pdf{{p}}	%PDF
+\def\setv{{D}}	%Set of vertices
+\def\sete{{E}}	%Set of edges
+\def\va{{u}}     	%Example vertex 1
+\def\vb{{t}}		%Example vertex 2
+\def\graph{{\mathtt{G}=(\setv,\sete)}}	%Graph
+\def\nv{{d}}	%# of vertices
+\newcommand{\pat}[1]{\Pi_{#1}}	 	%Parents (PLURAL)
+\newcommand{\singlepat}[1]{\pi_{#1}}	%Parent
+\newcommand{\neig}[1]{\text{N}\left(#1\right)}	%neighbours  (MRF/BN)
+\newcommand{\nd}[1]{\text{N}_{\text{d}}\left(#1\right)}	%non_descendents (MRF/BN)
+%\newcommand{\facneig}[1]{\text{N}^{\text{g}}\left(#1\right)}	 %neighbours  (factors) of a variable
+\newcommand{\facneig}[1]{F_{#1}}	 %neighbours  (factors) of a variable
+\newcommand{\varneig}[1]{\text{N}^{\text{v}}\left(#1\right)}	 %neighbours  (variable) of a factor
+\def\GM{{GM}}
+\def\cliq{{U}}	%clique
+\def\cliqset{\mathit{M}}		%set of cliques
+\newcommand{\pot}[2]{{\psi_{#1}(#2)}}	%potential
+\def\group{{G}}				%subset
+\def\groupset{\mathit{L}}		%set of groups
+\newcommand{\func}[2]{{\phi_{#1}(#2)}}	%function node
+\newcommand{\funcs}[1]{{\phi_{#1}}}		%function node simplified notation
+\def\ind{\perp\!\!\!\perp}			%Independency symbol
+
+\def\Gcliques{{\bar{U}}}
+\def\Jtree{{\mathtt{T}}}
+\newcommand{\isgraph}[1]{\mathtt{#1}}
+\newcommand{\Sij}[2]{S_{#1,#2}}	%Separator set
+%\newcommand{\mijJT}[2]{m_{#1,#2}(\Vs{\Sij{#1}{#2}})}
+\newcommand{\mijJT}[3]{\mu^{#3,\text{JT}}_{#1\rightarrow#2}(\Vs{\Sij{#1}{#2}})}
+
+\def\potential{{\varphi}}
+
+%Others
+\def\order{{\mathcal{O}}}
+\def\E{{\mathbb{E}}}
+
+%Sum product
+\newcommand{\mij}[2]{m_{#1,#2}(\Vi{#2})}
+\newcommand{\muvf}[3]{\mu_{\Vi{#1}\rightarrow \funcs{#2}}^{#3}(\Vi{#1})}
+\newcommand{\mufv}[3]{\mu_{\funcs{#1}\rightarrow \Vi{#2}}^{#3}(\Vi{#2})}
+%Sum product (LLR for binary codes)
+
+\newcommand{\muvfllr}[3]{\mu_{\Vi{#1}\rightarrow \CN{#2}}^{#3}}
+\newcommand{\mufvllr}[3]{\mu_{\CN{#1}\rightarrow \Vi{#2}}^{#3}}
+
+%Matrices and vectors
+\newcommand{\vect}[1]{\mathbf{#1}}
+
+%%%%%%%%%%%%%EP notation
+\def\DKL{D_{KL}}
+\def\pair{{\psi}}
+\def\q{{q}}
+\newcommand\qij[2]{{w_{#1}^{(#2)}}}			%wi^j
+\newcommand\qijk[3]{{w_{#1,#2}^{(#3)}}}		%wa,b^j
+\newcommand\ul[2]{{\mu_{#1}^{/#2}(V_{#1})}}	%ui^/l(Vi)
+\newcommand\uab[3]{{\mu_{#1,#2}^{/#3}(V_{#1},V_{#2})}}	%uab^/l(Va,Vb)
+\newcommand\cep[1]{{\widehat{w}^{(#1)}}}		%Aproximation for each check function
+\def\sfact{{f}}
+
+%Bayesian inference
+%\def\dy{{\mathtt{d}}}
+\def\dy{{d}}
+\newcommand\likelihood[2]{{l(#1,#2)}}
+
+%%Channel model
+\def\SourS{{W}}
+\def\EstimatedS{{\hat{\SourS}}}
+\def\EstimatedC{{\widehat{\V}}}
+\newcommand{\AphC}[1]{\calA(V_{#1})}
+\newcommand{\AphS}[1]{\calA(W_{#1})}
+\newcommand{\AphY}[1]{\calA(Y_{#1})}
+\def\V{{\vect{V}}}			%Tted word
+\def\Y{{\vect{Y}}}			%Received word
+\def\y{{\vect{y}}}
+\newcommand{{\Vi}}[1]{V_{#1}}	%Tted symbol
+\newcommand{{\vi}}[1]{v_{#1}}  %Instance of Tted symbol
+\newcommand{{\Vs}}[1]{\V_{#1}}%Set of ttted symbols
+\newcommand{{\Yi}}[1]{Y_{#1}}	%Rx symbol 
+\newcommand{{\yi}}[1]{y_{#1}}  %Instance of Rx symbol
+
+\def\cardW{{\mathtt{s}}}		%Cardinality of the source alphabet
+\def\rate{\mathtt{r}}			%Code rate
+\def\n{{\mathtt{n}}}			%Code length
+\def\k{{\mathtt{k}}}			%# of checks
+\def\decodf{{\mathtt{g}_{\code}}}
+\def\decodfMAP{{\mathtt{g}^{\text{MAP}}_{\code}}}
+\def\decodfsMAP{{\mathtt{g}^{\text{sMAP}}_{\code}}}
+\def\encodf{{\mathtt{f}_{\code}}}
+\def\code{\mathcal{C}}			%Code
+\def\capacity{\calC}		%Capacity
+\newcommand\h[1]{h_{2}(#1)}	%Binary entropy function
+
+%%GPCs
+\def\tset{\mathcal{D}}
+
+%%%%%Probabilities
+
+\def\PW{{P_{\text{w}}}}	%WER
+\def\Ps{{P_\text{s}}}		%SER
+\newcommand\dH[2]{{d^{\text{H}}(#1,#2)}} 	%Hamming distance
+
+%%Block codes
+\def\parity{{\mathbbm{1}}}
+\newcommand{\pf}[1]{{c_{#1}}}			%Check function
+\newcommand{\setp}[1]{{\vect{V}_{P_{#1}}}}	%Set of variables in a check 
+\def\Hs{{\underline{\textbf{H}}}}           %Parity check matrix
+\def\llr{{\theta}}
+
+%Ensemble sample notation
+
+\def\LDPC{{\text{LDPC }[\lamb{x},\rh{x},\n]}}
+\def\ELDPC{{\text{eLDPC}[\lamb{x},\rh{x},\n,\epar]}}
+\def\epar{{s}}
+
+%Variable degree
+\newcommand{\vd}[1]{{d_{\Vi{#1}}}}		%Variable degree
+\newcommand{\cd}[1]{{d_{\CN{#1}}}}		%Check degree
+\def\Pavg{{\Theta_{\text{avg}}}}	%Check average degree (node perspective)
+\def\Vavg{{\Lambda_{\text{avg}}}}	%Variable average degree (node perspective)
+\def\VDD{{\Lambda}}
+\def\CDD{{\Theta}}
+
+
+%Original number of edges and original graph (after BEC)
+\def\Edges{{E}}
+
+%Original left degree distribution
+\def\lambimax{{l_{\text{max}}}}				       %maximun lambda degree
+\newcommand{{\Tlmax}}[1]{\lambimax(#1)}      %maximun left degree  (t)
+\newcommand{\lambi}[1]{\lambda_{#1}}		%lambda_i
+\newcommand{\lamb}[1]{\lambda(#1)}		%lambda(x),lambda(t)
+\def\lambfull{{\lamb{x}=\sum_{i=1}^{\lambimax}\lambi{i}x^{i-1}}} %Full expression of lambda(x)
+\def\lavg{{l_{\text{avg}}}}						%lavg
+\newcommand{\lav}[1]{\lavg(#1)}			%lavg(t)
+
+%Original right degree distribution
+\def\rhimax{{r_{\text{max}}}}
+\newcommand{\rhi}[1]{\rho_{#1}}
+\newcommand{\rh}[1]{\rho(#1)}
+\def\rhofull{{\rh{x}=\sum_{j=1}^{\rhimax}\rhi{j}x^{j-1}}}
+\def\ravg{{r_{\text{avg}}}}
+\newcommand{\rav}[1]{\ravg(#1)}
+
+%DE
+\newcommand\nera[1]{{n^{?}_{#1}}}
+
+%Stability condition
+\def\sc{{\errfloor}}
+
+%BEC channel
+\def\pe{{\epsilon}}
+\def\peTEP{{\epsilon_{\text{TEP}}}}
+\def\peBP{{\epsilon_{\text{BP}}}}
+\def\pePD{{\epsilon_{\text{PD}}}}
+\def\peMAP{{\epsilon_{\text{MAP}}}}
+
+
+%%% A LIMPIAR
+%%%%%%% Wormald theorem notation
+
+\def\Z{{Z(t)}}						%Markov Process (MP)
+\newcommand\Zm[2]{{Z^{(#1)}}(#2)}		%Markov Process with parameter (m)
+\newcommand\Zmi[3]{{Z_{#2}^{(#1)}}(#3)}	%Component of the markov process
+\def\Zspace{{\phi}}	%Variable Space of the MP
+\def\Zdim{{d}}		%Dimension of the MP
+\def\Zprob{{\Gamma}}	%Probability Space of the MP
+\def\parmW{{a}}		%Parameter of the MP
+%\def\D{{\mathscr{D}}}		%Espace of zi constants
+\def\D{{\calD}}		%Espace of zi constants
+\newcommand\zi[1]{{z_{#1}}}	%zi constants
+\newcommand\f[1]{{f_{#1}}}	%f functions
+\newcommand\g[1]{{g_{#1}}}	%g functions
+\newcommand\cbound[2]{{\Omega_{#1}^{#2}}}	%bounding constant 
+\def\ca{{\delta}}		%constant
+\def\L{{\nu}}
+\def\cond{{\bigg|}}
+
+
+\def\Pair{{\mathcal{T}}}					%Set of pair of variables
+\newcommand\Sk[1]{{\mathcal{K}^{/#1}_{s}}}	%Set of known variables	
+\newcommand\Skp[1]{{\mathcal{K}^{/#1}_{\Pair}}}	%Set of know pairs
+\newcommand{\pfext}[1]{{\hat{c}^{(#1)}}}	%Extended parity function
+
+%%%%%%%%%Transmitted and Received Words
+
+
+
+%%%%%% TEP Joint Formulation: Scenairos
+\def\cone{{\mathcal{\calS}_{1}}}				%S1, degree one check removed
+\def\ctwo{{\mathcal{\calS}_{2}}}				%S2, degree two removed
+\def\ctwoshare{{\mathcal{\calS}_{2}^{B}}}		%S2B, the variables share another variables
+\def\ctwonoshare{{\mathcal{\calS}_{2}^{A}}}		%S2A, they dont share 
+\def\ctwosharem{{\mathcal{\calS}_{2}^{ B_{1},j}}}	%They share one variable of degree j
+\def\cthreesharem{{\mathcal{\calS}_{2}^{ B_{2},j,\ell}}} %They share two variables of degrees j,l
+\newcommand\ctwoScheck[1]{{\mathcal{\calS}_{2}^{ B_{#1}}}} %They share u variables
+\def\pc{{\P_{C}(t)}}					%PC
+\newcommand{\pA}[1]{{\P_{B}(#1)}}		%PA
+\def\proofpa{{\upsilon}}
+\def\proofpb{{\nu}}
+
+\def\calS{{\mathcal{S}}}
+\def\calA{{\mathcal{A}}}
+\def\calC{{\mathcal{C}}}
+\def\calD{{\mathcal{D}}}
+
+
+%Estilo caligrafico del paquete mathtpm es muy feo, redefino algunas letras.
+%\newcommand{\calS}{\ensuremath{\textrm{\usefont{OMS}{cmr}{m}{n}S\ifmmode {1pt} \else {\, } \fi}}}
+%
+%\newcommand{\calA}{\ensuremath{\textrm{\usefont{OMS}{cmr}{m}{n}A\ifmmode {1pt} \else {\, } \fi}}}
+%
+%\newcommand{\calC}{\ensuremath{\textrm{\usefont{OMS}{cmr}{m}{n}C\ifmmode {1pt} \else {\, } \fi}}}
+
+%Ensemble sample notation
+
+
+\def\density{{\Delta}}
+\def\errfloor{{\omega}}
+\def\codweight{{A_{\text{cw}}}}
+\def\ssweight{{A_{\text{ss}}}}
+
+%\newcommand\fracbinom[2]{\lfloor\substack{{\large#1}\\{\large #2}}\rfloor}
+
+
+
+
+%%%%%%%%%%%Peeling/TEP decoder analysis
+\def\Inctime{{\triangle t}}
+\newcommand{\eremain}[1]{e(#1)}
+\newcommand{\li}[2]{l_{#1}(#2)}
+\newcommand{\ri}[2]{r_{#1}(#2)}
+\newcommand{\Ri}[2]{R_{#1}(#2)}
+\newcommand{\Li}[2]{L_{#1}(#2)}
+
+%TreeEP BEC algorithm
+\newcommand{\TEP}{TEP }
+%\newcommand{{\Vi}}[1]{V_{#1}}
+\def\indone{{p}}
+\def\indtwo{{q}}
+\def\Vione{{\Vi{\indone}}}
+\def\Vitwo{{\Vi{\indtwo}}}
+\newcommand{{\CN}}[1]{P_{#1}}
+%TEP Analysis
+\newcommand{{\convfull}}[2]{\sum_{\substack{q=1\\q\neq i,q \neq#1}}^{#2+#1}\frac{\li{q}{t}}{\eremain{t}}\frac{\li{(#2-q)+#1}{t}}{\eremain{t}}}		%sum in the TEP analysis probabilities
+
+
+
+%%%%%%%%%%Proof of scheduling
+\newcommand{\cHj}[2]{{\vect{c}_{#2}^{#1}}}
+\newcommand{\zc}[1]{{\vect{0}^{#1}}}
+ \newcommand{\z}[1]{{\vect{z}(#1)}}
+
+\def\mcp{{x_{\text{abs}}}}		%Maximum critical point.
+\def\cp{{\Gamma}}		%Constraint plain
+\def\gap{{\delta}}
+\def\gain{{\Upsilon_{\rate}}}
+\def\DD{{(\lambda(x),\rho(x))}}
+\def\DEfun{{f(x,\pe)}}
+\def\Inc{{\varsigma}}
+
+\newcommand\set[1]{{\mathcal{S}_{#1}}}
+
+
+%RCDD sequences
+\def\parm{{\alpha}}
+\def\N{{N}}
+\newcommand{\lambzr}[2]{{\hat{\lambda}_{#1}(#2)}}
+\newcommand{\rhozr}[2]{{\rho_{#1}(#2)}}
+\newcommand{\ltrunc}[3]{\overline{\lambda}_{#1}^{(#3)}(#2)}
+\newcommand{\lnorm}[3]{\lambda_{#1}^{(#3)}(#2)}
+\def\gapTEP{{\delta_{\text{TEP}}}}
+\def\gapBP{{\delta_{\text{BP}}}}
+\def\vp{{\theta}}
+
+\def\leftc{{l^{\text{c}}_{\text{max}}}}
+\def\rightc{{r^{\text{c}}_{\text{max}}}}
+
+
+\def\linea{{\reglainf}}
+
+%BCJR equalizer
+\def\bcjr{{N}}
+\def\bcjrl{{n}}
+\def\seq{{n_{E}}}
+\def\cst{{\mathbf s}}
+\def\hz{{\boldsymbol \overline{h}}}
+%Factor graphs and sum-product algorithm
+
+\def\var{{y}}
+\def\yp{{\mathbf y}}
+\def\num{{n_{V}}}
+\def\Lf{{U}}
+\def\norm{{\frac{1}{Z}}}
+\def\normc{{Z}}
+\def\potGP{{\varphi}}
+
+%Gaussian Processes Notation
+
+\def\w{{\mathbf w}}        %GP Vector
+\def\r{{\mathbf r}}        %
+\newcommand{\PHI}{\boldsymbol{\Phi}}
+\def\b{{v}} %elemento de b
+\def\bve{{\mathbf \bve}}
+\def\d{{d}}
+%\def\k{{ k}}
+\def\kk{{\mathbf \k}}
+\def\K{{\underline{\mathbf K}}}
+%\def\x{{\vect{x}}}
+\def\x{{\vect{x}}}
+\def\yGP{\vect{\b}}
+\def\newp{_{*}}        %GP Vector
+\def\newout{V_{*}}
+\newcommand{\p}{\boldsymbol{\phi}}
+\def\X{{\underline{\mathbf x}}}
+\def\teta{{\mathbf \theta}}
+\def\muw{{\mathbf \mu_\w}}
+\def\newin{{\x\subind{*}}}
+\def\fv{F}
+\def\fp{\vect{F}}
+\def\nD{n_{\tset}}
+
+\def\tset{\mathcal{D}}
+\def\mgp{\boldsymbol{\mu}}
+\def\Nor{\mathcal{N}}                %Gaussian distribution
+\def\treg{x} %Target value of a regression problem
+\def\tregnew{x_{*}}
+%Communications notation
+\def\chl{{n_L}}
+%\def\cir{\mathrm{h}}
+\def\cir{h}
+\def\chc{{c}} %channel coefficient
+\def\nlf{{g}}
+\def\noi{{n}}
+\def\cho{{U}}
+\def\eqo{{m}} %Equalizer order
+\def\eqd{{\tau}} %Equalizer delay
+\def\inp{{m}} %Encoder input
+%\def\h{{h}} %Channel
+\def\wn{{Z}} %Gaussian noise
+\def\out{{x}} %Channel output
+
+%%% Methods' sub-indices
+\newcommand{\kc}{k_{C}}
+\newcommand{\matr}[1]{\mathbf{#1}}     %matrices (bold type)
+
+\newcommand{\subind}[1]{_{\mathrm{#1}}}
+
+\newcommand{\supportset}[1]{\overline{#1}}
+
+%Exponential families
+
+\def\setI{\mathcal{I}}
+\def\canv{\boldsymbol{\theta}}
+\def\can{\theta}
+\def\logp{A(\canv)}
+\def\setcan{\Xi}
+\def\meanp{\mu}
+
+%%%%%%%%%%%%
+\def \titulo{Expectation Propagation Decoding of Low-Density Parity-Check Codes}
+\def \autor{Pablo Mart\'inez Olmos}
+\def \directorone{Juan Jos\'e Murillo Fuentes}
+\def \directortwo{Fernando P\'erez Cruz}
+\def \directortituloone{Profesor Titular Dpto. de Teor\'ia de la Se\~nal y Comunicaciones. Universidad de Sevilla}
+\def \directortitulotwo{Profesor Titular Dpto. de Teor\'ia de la Se\~nal y Comunicaciones. Universidad Carlos III de Madrid}
+\def \directordept{Javier Pay\'an Somet}
+\def \directordeptpos{Director del Dpto. de Teor\'ia de la Se\~nal y Comunicaciones. Universidad de Sevilla.}
+\def \fecha{Sevilla, 2011}
+\def \fechados{Sevilla, Abril de 2011}
+
+
+\def\tituloportada{%
+    \thispagestyle{empty}%
+    \null\vfill %vskip1in%
+    \begin{center}
+        {\huge \underline{UNIVERSIDAD DE SEVILLA}}\\
+        %\underline{ESCUELA T\'ECNICA SUPERIOR DE INGENIER\'IA}}
+    \end{center}
+   \begin{center}
+        {\Large ESCUELA T\'ECNICA SUPERIOR DE INGENIER\'IA\\
+        \vspace{0.2 cm}
+        DEPARTAMENTO DE TEOR\'IA DE LA SE\~NAL Y COMUNICACIONES}
+    \end{center}
+    \vspace{2.5 cm}
+    \begin{center}
+        {\Large Tesis Doctoral:\\\vspace{0.25cm}
+        {\huge\uppercase\expandafter{\bf\titulo}}}
+    \end{center}
+    \vspace{2cm}
+    \begin{center}
+        \begin{figure}[h]
+\begin{tabular}{cc}
+  \includegraphics[width=5 cm]{logo.pdf} & \includegraphics[width=5 cm]{US.pdf} \end{tabular}
+\end{figure}
+    \end{center}
+    \vspace{0.25cm}
+   
+    \begin{center}
+        \rm
+        {\large\bf \autor}\\
+        \fecha
+    \end{center}
+    %\nota{Fer est\'an revisados los 7 primeros temas.}
+    \vfill
+    \newpage
+} % TÌtulo portada
+
+
+%%%%%%%%%%%%primera pagina
+
+\def\firstpage{
+  \thispagestyle{empty}%
+    \null\vfill %vskip1in%
+    \begin{center}
+        {\Large \underline{UNIVERSIDAD DE SEVILLA}}\\\vspace{0.2cm}
+        {\large DEPARTAMENTO DE TEOR\'IA DE LA SE\~NAL Y COMUNICACIONES}
+    \end{center}
+    
+  % \begin{center}
+   %     {\Large DEPARTAMENTO DE TEOR\'IA DE LA SE\~NAL Y COMUNICACIONES}
+    %\end{center}
+    \vspace{0.3 cm}
+    \begin{center}
+        {{\huge\uppercase\expandafter{\bf\titulo}}}
+    \end{center}
+   % \vspace{2cm}
+        \vspace{0.7 cm}
+      \begin{center}
+        {\large Tesis doctoral presentada por:}\\\vspace{0.3 cm}
+        {\Large\bf D. \autor,}\\\vspace{0.3 cm}
+        {\large para optar al grado de doctor Ingeniero de Telecomunicaci\'on. }
+    \end{center}
+    \vspace{1.3 cm}
+    %\begin{center}
+       {\large Directores:
+        \par \vspace{.2cm}
+        {\Large {\bf \directorone}}{\large. \directortituloone}
+        \vspace{.5cm}\\\par
+        {\Large {\bf \directortwo}}{\large. \directortitulotwo}
+        }
+        \begin{center}
+        {\large \fecha}
+        \end{center}
+    %\end{center}
+	\vspace{0.3 cm}
+
+   \begin{center}
+        \begin{figure}[h]
+\begin{tabular}{cc}
+  \includegraphics[width=3 cm]{logo.pdf} & \includegraphics[width=3 cm]{US.pdf} \end{tabular}
+\end{figure}
+    \end{center}
+\newpage
+    }
+    
+\def\certificado{
+
+\vspace{1.5cm}
+\par {\large {\bf \directorone}}{\large. \directortituloone}, y\\
+\vspace{0.5cm}
+\par {\large {\bf \directortwo}}{\large. \directortitulotwo},\vspace{2cm} \\
+
+{\large
+CERTIFICAN:\\
+\par Que D. Pablo Mart\'inez Olmos, ha realizado bajo nuestra direcci\'on en el Departamento de Teor\'ia de la Se\~nal y Comunicaciones de la Escuela de Ingenier\'ia de la Universidad de Sevilla, el siguiente trabajo de investigaci\'on: {\bf Expectation Propagation Decoding of Low-Density Parity-Check Codes}. Consideramos que dicho trabajo re\'une los requisitos necesarios para su presentaci\'on y defensa como Tesis Doctoral. \vspace{2cm}\\
+
+%\begin{}
+\fechados
+%\end{right}
+\vspace{2cm}\\
+
+\directorone$\qquad\qquad\qquad\qquad$\directortwo
+}
+
+\newpage
+}    
+ 
+%
+%    \thispagestyle{empty}%
+%    \null\vfill
+%    \begin{center}
+%        {\Large Proyecto de Tesis Doctoral}
+%    \end{center}
+%    \vspace{2cm}
+%    \begin{center}
+%        {\Large\uppercase\expandafter{\bf\titulo}}
+%    \end{center}
+%    \vspace{3cm}
+%    \begin{center}
+%        \rm Autor:\\
+%        \par \vspace{0.2cm}
+%        {\large \bf\autor}\\
+%        \par \vspace{0.1cm}
+%    \end{center}
+%    \vspace{2cm}
+%    \begin{center}
+%        \rm Directores:
+%        \\
+%        \par \vspace{.2cm}
+%        {\large \bf \directorone}\\
+%        \par \vspace{.1cm}
+%        \directortituloone\\
+%        \par \vspace{.5cm}
+%        \\
+%        \par \vspace{.2cm}
+%        {\large \bf \directortwo}\\
+%        \par \vspace{.1cm}
+%        \directortitulotwo\\
+%        \par \vspace{.5cm}
+%    \end{center}
+%    \par
+%    \vspace{2.1cm}
+%}
+% First page
+
+
+\def\beforepreface{
+     \tituloportada
+     \cleardoublepage
+     \firstpage
+     \cleardoublepage     
+     \certificado
+}

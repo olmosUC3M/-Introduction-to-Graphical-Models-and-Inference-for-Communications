@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{BEC}{3}{0}{1}
+\beamer@sectionintoc {2}{Linear Block Codes and MAP decoding}{8}{0}{2}
+\beamer@sectionintoc {3}{Modern Coding Theory in a nutshell}{16}{0}{3}
+\beamer@sectionintoc {4}{Low-density Parity-Check codes}{26}{0}{4}
+\beamer@sectionintoc {5}{Irregular LDPC codes}{36}{0}{5}
+\beamer@sectionintoc {6}{Convolutional LDPC codes}{44}{0}{6}

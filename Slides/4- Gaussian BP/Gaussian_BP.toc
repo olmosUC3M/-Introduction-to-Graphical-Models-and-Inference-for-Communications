@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Multivariate Gaussian distribution}{3}{0}{1}
+\beamer@sectionintoc {2}{Gaussian BP over a particular example}{8}{0}{2}
+\beamer@sectionintoc {3}{Gaussian Hidden Markov Models}{15}{0}{3}
+\beamer@sectionintoc {4}{Extension to any distribution?}{20}{0}{4}

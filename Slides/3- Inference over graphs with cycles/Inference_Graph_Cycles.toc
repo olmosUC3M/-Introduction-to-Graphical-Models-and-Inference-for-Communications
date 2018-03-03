@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Tools for simple graphs with cycles}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Clustering}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Cutset conditioning}{9}{0}{1}
+\beamer@sectionintoc {2}{The Junction Tree Algorithm}{14}{0}{2}
+\beamer@sectionintoc {3}{Loopy BP}{16}{0}{3}

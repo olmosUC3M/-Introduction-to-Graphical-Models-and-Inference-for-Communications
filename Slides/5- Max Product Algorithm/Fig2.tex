@@ -1,0 +1,71 @@
+% This file was created by matlab2tikz.
+% Minimal pgfplots version: 1.3
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+
+\definecolor{mycolor1}{rgb}{0.00000,0.5,0.00000}
+
+\begin{tikzpicture}[%
+\tikzstyle{factor}=[rectangle,minimum size = 5mm, thick, draw =black,fill=black]
+\tikzstyle{var}=[circle,minimum size = 5mm, thick, draw =black,fill=black]
+\tikzstyle{second}=[circle, minimum size = 10mm, thick]
+\tikzstyle{box}=[rectangle, draw=black!100]
+\tikzstyle{connect}=[-latex, thick]
+
+	
+	\node[factor] (tphi0) at (0,0) [label=below:{$\ind[\st{0}=\st{}^*]$}]{};
+	\node[var] (phi0) at (2,0) [label=above:{$\st{0}$}]{};
+	\node[factor] (tphi1) at (4,0) [label=below:{$t_0$}]{};
+	\node[var] (s0) at (4,2) [label=left:{$S_0$}]{};
+	\node[factor] (fs0) at (4,4) [label=above:{$\p{S_0}$}]{};
+	
+	\node[var] (phi1) at (6,0) [label=above:{$\st{1}$}]{};
+	\node[factor] (tphi2) at (8,0) [label=below:{$t_1$}]{};
+	\node[var] (s1) at (8,2) [label=left:{$S_1$}]{};
+	\node[factor] (fs1) at (8,4) [label=above:{$\p{S_1}$}]{};	
+
+	
+	\node[var] (phi2) at (10,0) [label=above:{$\st{2}$}]{};
+	\node[factor] (tphi3) at (12,0) [label=below:{$t_2$}]{};
+		\node[var] (s2) at (12,2) [label=left:{$S_2$}]{};
+	\node[factor] (fs2) at (12,4) [label=above:{$\p{S_2}$}]{};		
+	
+	\node[var] (phi3) at (14,0) [label=above:{$\st{3}$}]{};
+	\node[factor] (tphi4) at (16,0) [label=below:{$t_3$}]{};
+	\node[var] (s3) at (16,2) [label=left:{$S_3$}]{};	
+	\node[factor] (fs3) at (16,4) [label=above:{$\p{S_3}$}]{};
+	
+	\node[var] (phi4) at (18,0) [label=above:{$\st{4}$}]{};
+	\node[factor] (tphi5) at (20,0) [label=below:{$t_4$}]{};
+	\node[var] (s4) at (20,2) [label=left:{$S_4$}]{};	
+	\node[factor] (fs4) at (20,4) [label=above:{$\p{S_4}$}]{};	
+	
+	\node[factor] (fs5) at (24,4) [label=above:{$\p{S_5}$}]{};	
+	\node[var] (s5) at (24,2) [label=left:{$S_5$}]{};	
+	\node[var] (phi5) at (22,0) [label=above:{$\st{5}$}]{};
+	\node[factor] (tphi6) at (24,0) [label=below:{$t_5$}]{};	
+	
+	\node[factor] (fs6) at (28,4) [label=above:{$\p{S_6}$}]{};	
+	\node[var] (s6) at (28,2) [label=left:{$S_5$}]{};	
+	\node[var] (phi6) at (26,0) [label=above:{$\st{6}$}]{};
+	\node[factor] (tphi7) at (28,0) [label=below:{$t_6$}]{};
+	\node[var] (phi7) at (30,0) [label=above:{$\st{7}$}]{};
+	\node[factor] (tphi8) at (32,0) [label=below:{$\ind[\st{7}=\st{}^*]$}]{};
+	
+	\path
+		(tphi0) edge [] (tphi8)
+		(fs0) edge [] (tphi1)
+		(fs1) edge [] (tphi2)
+		(fs2) edge [] (tphi3)
+		(fs3) edge [] (tphi4)
+		(fs4) edge [] (tphi5)
+		(fs5) edge [] (tphi6)	
+		(fs6) edge [] (tphi7);	
+				
+		
+	
+\end{tikzpicture}
+   

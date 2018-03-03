@@ -1,0 +1,63 @@
+% This file was created by matlab2tikz.
+% Minimal pgfplots version: 1.3
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+
+\begin{tikzpicture}[%
+    node distance = 1.5 cm,auto,>=latex',
+    block/.style  = {draw, rectangle, minimum width = 0.75cm, minimum height = 0.75cm},
+    sum/.style    = {draw, circle, minimum size=.5cm, node distance=1.25cm},
+    input/.style  = {coordinate},
+    output/.style = {coordinate},
+    dot/.style    = {anchor=base,fill,circle,inner sep=1pt},
+    bigblock/.style={draw,rectangle,minimum width=6cm, minimum height=3cm,fill=gray}
+     ]
+
+   
+    \node [input, name=input] {};
+    \node [sum, right of=input] (sum) {};
+    \node [block, right of=sum] (a1) {$D$};
+    \node [block, right of=a1] (a2) {$D$};
+    \node [block, right of=a2] (k) {$D$};
+    \node [output, right of=k] (vl) {}; 
+    \draw [->] (a2) -- coordinate[dot](vl2)  node {$\va{e}{2}{k}$} (k);
+    \node [sum, below of=vl2] (a3) {};
+
+    \draw [->] (sum) -- coordinate[dot](vl3) node[below] {$i_k$} (a1);
+
+    \draw [->] (a1) -- coordinate[dot](vl4) node[below] {$\va{e}{1}{k}$} (a2);
+     \node [sum, above of=vl4] (a4) {};
+    \draw [->] (vl2) --  (a3);
+    \draw [draw,->] (input) -- coordinate[dot](vl6) node[shift=({0:-12pt})] {$m_k$} (sum); 
+ 
+    \draw [-] (k) -- node[shift=({0:0pt})]  {$\va{e}{3}{k}$} (vl); 
+       \node [sum, above of=vl] (a5) {};
+       \node [output, right of=a5] (a6) {};
+       \node [output, above of=a6] (a7) {};
+   \draw[->] (a4) -- (a5);
+   \draw[->] (vl) --(a5);    
+    \draw [->] (vl) |- (a3);
+    \draw [->] (a3) -| node[]{$f_k$} (sum);
+    \draw [->] (vl4) -- (a4);
+   \draw [->] (vl3) |- (a4);
+   
+    \draw [->] (a5) -- (a6);
+    \draw[->] (vl6) |- (a7);
+    \node [right of=a7] (a8) {$\va{x}{1}{k}$};
+    \node [right of=a6] (a9) {$\va{x}{2}{k}$};
+    
+    \node [shift=({145:12pt})] at (sum.center)  {\tiny $+$}; % I removed {}
+    \node [shift=({-45:12pt})] at (sum.center)  {\tiny $+$}; 
+    \node [shift=({20:12pt})] at (a3.center)  {\tiny $+$}; 
+   \node [shift=({110:12pt})] at (a3.center)  {\tiny $+$}; 
+       \node [shift=({140:12pt})] at (a4.center)  {\tiny $+$}; 
+   \node [shift=({-110:12pt})] at (a4.center)  {\tiny $+$}; 
+       \node [shift=({140:12pt})] at (a5.center)  {\tiny $+$}; 
+   \node [shift=({-110:12pt})] at (a5.center)  {\tiny $+$};    
+   
+
+   
+\end{tikzpicture}%
